@@ -1,0 +1,70 @@
+@import '_colors'
+
+.game
+  background: $wetasphalt
+.main
+  margin: 1rem auto
+
+.categories, .quizzes, .players
+  margin: 1rem 0
+
+.category
+  background: $midnightblue
+  margin: 0
+  .category-name
+    background: darken($midnightblue, 40%)
+    color: $white
+    font-size: larger
+    padding: 1rem
+    text-align: center
+  .category-points
+    position: relative
+    margin: 0 auto
+    text-align: center
+    .category-btn
+      color: $yellow
+      background: $wetasphalt
+      font-size: larger
+      margin: 0.5rem 0
+      text-align: center
+      &.active
+        color: $wetasphalt
+        background: $yellow
+      &.disabled
+        color: darken($midnightblue, 40%)
+
+.quizzes
+  float: none
+  text-align: left
+.questions
+  text-transform: uppercase
+.answers
+  margin: 0 auto
+  position: relative
+  .answers-buttons
+    float: none
+    position: relative
+    width: 100%
+    .btn
+      text-align: left
+.player
+  background: $black
+  margin: 1rem
+  text-align: center
+  .player-name
+    color: white
+    font-size: larger
+    height: 3rem
+    padding: 0.5rem 0
+  .player-score
+    background: $white
+    border: 1rem solid $gray
+    font-size: larger
+    padding: 1rem
+    &.negative
+      background: $red
+      color: $white
+  .player-actions
+    padding: 0.5rem 0
+    .btn
+      margin: 0 0.5rem

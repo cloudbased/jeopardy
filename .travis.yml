@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '0.12'
+  - '0.10'
+cache:
+  directories:
+    - node_modules
+sudo: true
+before_install:
+  - npm install -g eslint jsxcs stylus browserify babelify
+install:
+  - npm install
+before_script:
+  - npm run build
+script:
+  - npm run lint

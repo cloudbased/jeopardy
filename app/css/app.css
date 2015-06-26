@@ -1,0 +1,87 @@
+.game {
+  background: #34495e;
+}
+.main {
+  margin: 1rem auto;
+}
+.categories,
+.quizzes,
+.players {
+  margin: 1rem 0;
+}
+.category {
+  background: #2c3e50;
+  margin: 0;
+}
+.category .category-name {
+  background: #1a2530;
+  color: #fff;
+  font-size: larger;
+  padding: 1rem;
+  text-align: center;
+}
+.category .category-points {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+.category .category-points .category-btn {
+  color: #ffdc00;
+  background: #34495e;
+  font-size: larger;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+.category .category-points .category-btn.active {
+  color: #34495e;
+  background: #ffdc00;
+}
+.category .category-points .category-btn.disabled {
+  color: #1a2530;
+}
+.quizzes {
+  float: none;
+  text-align: left;
+}
+.questions {
+  text-transform: uppercase;
+}
+.answers {
+  margin: 0 auto;
+  position: relative;
+}
+.answers .answers-buttons {
+  float: none;
+  position: relative;
+  width: 100%;
+}
+.answers .answers-buttons .btn {
+  text-align: left;
+}
+.player {
+  background: #111;
+  margin: 1rem;
+  text-align: center;
+}
+.player .player-name {
+  color: #fff;
+  font-size: larger;
+  height: 3rem;
+  padding: 0.5rem 0;
+}
+.player .player-score {
+  background: #fff;
+  border: 1rem solid #aaa;
+  font-size: larger;
+  padding: 1rem;
+}
+.player .player-score.negative {
+  background: #ff4136;
+  color: #fff;
+}
+.player .player-actions {
+  padding: 0.5rem 0;
+}
+.player .player-actions .btn {
+  margin: 0 0.5rem;
+}

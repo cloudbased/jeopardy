@@ -1,0 +1,36 @@
+{
+  "name": "jeopardy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm run build-js && npm run build-css",
+    "build-css": "stylus ./src/styles/app.styl -o ./app/css/app.css",
+    "build-js": "browserify -t babelify ./src/scripts/app.js -o ./app/js/app.js -v",
+    "deploy": "cd app && cf push jeopardy -m 128M",
+    "eslint": "eslint ./src/scripts --ext=.js --ext=.jsx",
+    "jsxcs": "jsxcs ./src/scripts",
+    "lint": "npm run eslint && npm run jsxcs",
+    "serve": "browser-sync start --server 'app' --files 'index.html,app/**/*' --no-notify",
+    "watch": "npm run watch-js & npm run watch-css",
+    "watch-css": "stylus -w ./src/styles/app.styl -o ./app/css/app.css",
+    "watch-js": "watchify -t babelify ./src/scripts/app.js -o ./app/js/app.js -v"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^2.2.7",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "reactfire": "^0.4.0",
+    "watchify": "^3.2.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^3.1.19",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.6.2",
+    "jsxcs": "^0.2.1"
+  }
+}
