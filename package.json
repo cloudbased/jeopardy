@@ -6,9 +6,9 @@
   "scripts": {
     "build": "npm run build-js && npm run build-css",
     "build-css": "stylus ./src/styles/app.styl -o ./app/css/app.css",
-    "build-js": "browserify -t babelify ./src/scripts/app.js -o ./app/js/app.js -v",
+    "build-js": "browserify ./src/scripts/app.js -o ./app/js/app.js -v",
     "deploy": "cd app && cf push jeopardy -m 128M",
-    "eslint": "eslint ./src/scripts --ext=.js --ext=.jsx",
+    "eslint": "eslint --fix ./src/scripts --ext=.js --ext=.jsx",
     "jsxcs": "jsxcs ./src/scripts",
     "lint": "npm run eslint && npm run jsxcs",
     "serve": "browser-sync start --server 'app' --files 'index.html,app/**/*' --no-notify",
@@ -16,25 +16,44 @@
     "watch-css": "stylus -w ./src/styles/app.styl -o ./app/css/app.css",
     "watch-js": "watchify -t babelify ./src/scripts/app.js -o ./app/js/app.js -v"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "env",
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "firebase": "^4.9.0",
     "jquery": "^3.3.1",
-    "react": "^16.2.0",
-    "reactfire": "^1.0.0",
-    "watchify": "^3.2.3"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "watchify": "^3.11.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
-    "browserify": "^15.2.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^16.2.0",
     "debug": "^3.1.0",
-    "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.5.1",
-    "firebase": "^4.9.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "firebase": "^4.12.1",
     "jsxcs": "^0.2.1",
-    "react": "^16.2.0"
+    "prop-types": "^15.6.1",
+    "stylus": "^0.54.5"
   }
 }
